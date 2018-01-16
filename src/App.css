@@ -26,3 +26,13 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.notification {
+  text-align: center;
+}
+
+.is-steelblue{
+  background-color: steelblue;
+}
+
+
