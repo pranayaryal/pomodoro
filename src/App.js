@@ -48,6 +48,8 @@ class App extends Component {
         var endtime = new Date(Date.parse(new Date()) + 15 * 60 * 1000).getTime()
         this.timerID = setInterval(() => this.tick(endtime), 1000);
     }
+
+
     
     componentWillUnmount(){
        clearInterval(this.timerID);

@@ -19,9 +19,10 @@ const App = () => (
         <div className="container">
            <div className="section">
                 <div className="columns">
-                    <FilterTimer filter="POMODORO">POMODORO</FilterTimer>
-                    <FilterTimer filter="SHORT">SHORT BREAK</FilterTimer>
-                    <FilterTimer filter="LONG">LONG BREAK</FilterTimer>
+                    {/* <FilterTimer filter="POMODORO">POMODORO</FilterTimer> */}
+                    <FilterTimer filter="15">POMODORO</FilterTimer>
+                    <FilterTimer filter="5">SHORT BREAK</FilterTimer>
+                    <FilterTimer filter="10">LONG BREAK</FilterTimer>
                 </div>
            </div>
            <div className="section">
@@ -34,7 +35,12 @@ const App = () => (
                 </div>
            </div>
            <div className="section">
-              <ControlWrapper/>
+              
+            <div className="columns is-gapless">
+                <ControlWrapper filter="START">START</ControlWrapper>
+                <ControlWrapper filter="STOP">STOP</ControlWrapper>
+                <ControlWrapper filter="RESET">RESET</ControlWrapper>
+            </div>
            </div>
 
 

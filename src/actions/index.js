@@ -44,11 +44,27 @@ export const startTimer = time =>  {
     }
 }
 
-export const setTimeLength = filter => {
+export const setTimeLength = (filter, endtime) => {
     return {
         type: filter,
-        endtime: new Date(Date.parse(new Date()) + 15 * 60 * 1000).getTime(),
+        // endtime: new Date(Date.parse(new Date()) + 15 * 60 * 1000).getTime(),
+        endtime,
         filter
 
+    }
+}
+
+export const setNow = (filter) => {
+    console.log(filter)
+    return {
+        type: 'GET_NOW_DATE',
+        filter
+    }
+}
+
+export const filterControls = filter => {
+    return {
+        type: 'STOP_COUNTER',
+        filter
     }
 }

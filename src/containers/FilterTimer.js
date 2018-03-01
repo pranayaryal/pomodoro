@@ -2,7 +2,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Timer from '../components/Timer'
-import { startTimer, setTimeLength } from '../actions'
+import { startTimer, setTimeLength, setNow } from '../actions'
 
 const mapStateToProps = (state, ownProps) => {
     return {
@@ -13,8 +13,11 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
     return { 
         onClick: () => {
-            setInterval(() => {
-                dispatch(setTimeLength(ownProps.filter))
+            console.log(ownProps.filter)
+            // var endtime = new Date(Date.parse(new Date()) + 15 * 60 * 1000).getTime();
+            var endtime = new Date(Date.parse(new Date()) + parseInt(ownProps.filter) * 60 * 1000).getTime();
+            var timerId = setInterval(() => {
+                dispatch(setTimeLength(ownProps.filter, endtime))
             }, 1000)
         }
     }

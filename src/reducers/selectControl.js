@@ -6,7 +6,7 @@ const initialState = {
 
 }
 
-const selectTime = (state = initialState, action) => {
+const selectControl = (state = initialState, action) => {
     switch (action.type){
         case 'SET_TIME_LENGTH':
             return action.filter
@@ -16,4 +16,4 @@ const selectTime = (state = initialState, action) => {
 }
 
 
-export default selectTime
+export default selectControl

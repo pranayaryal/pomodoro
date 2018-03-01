@@ -1,8 +1,8 @@
 
 const initialState = {
-    pomodoro: '15.00',
-    short: '5.0',
-    long: '10.0',
+    pomodoro: pom,
+    short: short,
+    long: long,
     time: ''
 }
 
@@ -20,10 +20,9 @@ const long = new Date(Date.parse(new Date()) + 10 * 60 * 1000).getTime()
 
 const defineTimings = (state = initialState, action) => {
     switch (action.type){
-        case 'POMODORO':
+        case '15':
 
-
-                var diff = getTimeRemaining(pom)
+                var diff = getTimeRemaining(action.endtime)
 
                 var a = [
                     ...state,
@@ -38,9 +37,9 @@ const defineTimings = (state = initialState, action) => {
 
 
 
-        case 'SHORT':
-            console.log('here')
-            var diff = getTimeRemaining(short)
+        case '5':
+            // var diff = getTimeRemaining(short)
+            var diff = getTimeRemaining(action.endtime)
             var a = [
                 ...state,
                 {
@@ -51,8 +50,8 @@ const defineTimings = (state = initialState, action) => {
                 ]
 
                 return a
-        case 'LONG':
-            var diff = getTimeRemaining(long)
+        case '10':
+            var diff = getTimeRemaining(action.endtime)
             var a = [
                 ...state,
                 {
@@ -65,6 +64,19 @@ const defineTimings = (state = initialState, action) => {
                 return a
         case 'START_TIMER':
             console.log('you are here')
+        case 'GET_NOW_DATE':
+                console.log('you are innow')
+        case 'STOP_COUNTER':
+                clearInterval()
+                console.log(state)
+                return [
+                    ...state,
+                    {
+                        minutes:0,
+                        seconds:0
+                    }
+                ]
+                
         default:
             return state
 

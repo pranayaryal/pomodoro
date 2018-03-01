@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Controls from '../components/Controls'
-import { startTimer, setTimeLength } from '../actions'
+import { startTimer, setTimeLength, filterControls } from '../actions'
 
 const mapStateToProps = (state) => {
     return {
@@ -9,11 +9,10 @@ const mapStateToProps = (state) => {
     }
  }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch, ownProps) => {
     return { 
-        onClickButton: id => {
-            console.log(id)
-            dispatch(setTimeLength(id))
+        onClickButton : () => {
+            dispatch(filterControls(ownProps.filter))
         }
     }
 }

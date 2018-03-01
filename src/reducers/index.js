@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux'
 import defineTimings from './defineTimings'
-import selectTime from './selectTime'
+import selectControl from './selectControl'
 
 const pomo = combineReducers({
     defineTimings,
-    selectTime
+    selectControl
 })
 
 
